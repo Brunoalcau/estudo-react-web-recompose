@@ -10,6 +10,8 @@ import {ThemeProvider} from 'styled-components';
 
 import {theme} from './config';
 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import faCoffee from '@fortawesome/fontawesome-free-solid/faCoffee'
 
 ReactDOM.render(
 	<Provider store={store}>

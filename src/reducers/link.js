@@ -6,7 +6,9 @@ const initial = {
 
 const getLink = (state, {payload}) => {	
 	const newState = cloneDeep(state);
+	
 	const {links} = payload;
+	
 	forEach(links, (item, index) => newState.byIndex[index] = item);
 	newState.allIndex  = map(links, (item, index) => index);
 	return newState;

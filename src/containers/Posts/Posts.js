@@ -11,6 +11,17 @@ import {map} from 'lodash';
 
 // local
 import {getLink} from '../../actions';
+// import {
+// 	Button,
+// 	Badges,
+// 	Text,
+// 	LinkButton,
+// 	Icon
+// } from '../../components/shared';
+
+import {
+	Post
+} from '../../components/Post';
 
 const enhance = compose(
 	connect(({link}) =>({
@@ -32,10 +43,7 @@ const enhance = compose(
 export const Posts = enhance(({link}) => {
 	return (
 		<Wrapper>
-			{map(
-				link.allIndex, 
-				(index) => <List key={index}><p>{link.byIndex[index].meta.title}</p></List>
-			)}
+			{map(link.allIndex, (item)=> <Post key={item} item={link.byIndex[item]} />)}
 		</Wrapper>
 	);
 });
